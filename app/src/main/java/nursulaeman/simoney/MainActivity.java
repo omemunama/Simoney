@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import nursulaeman.simoney.fragment.DashboardFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
@@ -53,12 +55,33 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
 
+                CharSequence s = menuItem.getTitle();
+                onSectionAttached(s);
+                switch (menuItem.getItemId()) {
+                    case R.id.nav_section_one:
+                        fragmentTransactionReplace(DashboardFragment.newInstance());
+                        break;
+                }
+
                 menuItem.setChecked(true);
                 drawerLayout.closeDrawers();
                 return true;
             }
         });
 
+    }
+
+    public void onSectionAttached(CharSequence mTitle) {
+        if (toolbar != null) {
+            toolbar.setTitle(mTitle);
+
+        }
+    }
+
+    private void fragmentTransactionReplace(Fragment fragmentInstance) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, fragmentInstance)
+                .commit();
     }
 
     private void setUpDrawerToogle() {
