@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import nursulaeman.simoney.fragment.DashboardFragment;
+import nursulaeman.simoney.fragment.TransactionFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_section_one:
                         fragmentTransactionReplace(DashboardFragment.newInstance());
+                        break;
+                    case R.id.nav_section_two:
+                        fragmentTransactionReplace(TransactionFragment.newInstance());
                         break;
                 }
 
