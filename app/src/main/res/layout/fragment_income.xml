@@ -28,6 +28,7 @@
         <EditText
             style="@style/etStyleDat"
             android:id="@+id/et_date_income"
+            android:focusable="false"
             android:hint="Date" />
 
     </android.support.design.widget.TextInputLayout>
@@ -35,21 +36,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/bt_save_income"
-            android:layout_width="match_parent"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="Save Income" />
-
-        <Button
-            android:id="@+id/bt_cancel_income"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cancel" />
 
     </LinearLayout>
 
