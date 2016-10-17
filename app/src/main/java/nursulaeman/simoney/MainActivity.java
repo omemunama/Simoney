@@ -1,5 +1,6 @@
 package nursulaeman.simoney;
 
+import android.content.pm.ActivityInfo;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -17,7 +18,7 @@ import java.util.Locale;
 import nursulaeman.simoney.fragment.DashboardFragment;
 import nursulaeman.simoney.fragment.TransactionFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class    MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
 
         initializeViews();
